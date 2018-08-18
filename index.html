@@ -1,0 +1,80 @@
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/colreorder/1.5.0/css/colReorder.bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/3.2.5/css/fixedColumns.bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.4/css/fixedHeader.bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/keytable/2.4.0/css/keyTable.bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.2.6/css/select.bootstrap.min.css"/>
+   
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/colreorder/1.5.0/js/dataTables.colReorder.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/fixedcolumns/3.2.5/js/dataTables.fixedColumns.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.4/js/dataTables.fixedHeader.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/keytable/2.4.0/js/dataTables.keyTable.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/select/1.2.6/js/dataTables.select.min.js"></script>
+
+  <script>
+    $(document).ready( function () {
+      $('#myTable').DataTable({
+        fixedHeader: true,
+        //colReorder: true,
+        scrollX: true,
+        scrollY: 400,
+        fixedColumns: {
+          leftColumns: 4
+        },
+        ajax: {
+          url: 'equipment.json',
+          dataSrc: ''
+        },
+        columns: [
+          { data: 'Level', title: 'Level' },
+          { data: 'Name', title: 'Keywords' },
+          { data: 'Wear', title: 'Wear Location' },
+          { data: 'Area', title: 'Area' },
+          { data: 'Type', title: 'Type' },
+          { data: 'Newbie', title: 'Newbie' },
+          { data: 'Flags', title: 'Flags' },
+          { data: 'Stats.hit', title: 'Hitroll' },
+          { data: 'Stats.dam', title: 'Damroll' },
+          { data: 'Stats.hp', title: 'HP' },
+          { data: 'Stats.mp', title: 'MP' },
+          { data: 'Stats.mv', title: 'MV' },
+          { data: 'Stats.str', title: 'Str' },
+          { data: 'Stats.dex', title: 'Dex' },
+          { data: 'Stats.con', title: 'Con' },
+          { data: 'Stats.wis', title: 'Wis' },
+          { data: 'Stats.sav', title: 'Saves' },
+          { data: 'Stats.age', title: 'Age' },
+          { data: 'Stats.ac', title: 'AC' },
+          { data: 'Stats.AC', title: 'AC (2)' },
+          { data: 'Stats.damRed', title: 'Damage Reduction' },
+          { data: 'Stats.sDam', title: 'Spell Damage' },
+          { data: 'Stats.atkSpd', title: 'Attack Speed' },
+        ]
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h5 class="text-center h5">Redemption Equipment List</h5>
+        <table id="myTable" class="table table-striped"></table>        
+      </div>
+    </div>
+  </div>
+</body>
+</html>
